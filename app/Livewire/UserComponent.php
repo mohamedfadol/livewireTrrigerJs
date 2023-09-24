@@ -19,7 +19,7 @@ class UserComponent extends Component
     public function mount()
     {
         $this->users =  User::get();
-        // $this->dispatch('say-goodbye', ['message' => 'Hello from Livewire!']);
+        $this->dispatch('say-goodbye', ['message' => 'Hello from Livewire!']);
     }
 
     public function updatedUser($value)
@@ -30,6 +30,6 @@ class UserComponent extends Component
 
 
     public function render(){
-        return view('livewire.user-component');
+        return view('livewire.user-component',['users' => $this->users]);
     }
 }

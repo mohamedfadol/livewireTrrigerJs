@@ -13,7 +13,7 @@
 
         <!-- Scripts -->
         <?php echo app('Illuminate\Foundation\Vite')(['resources/css/app.css', 'resources/js/app.js']); ?>
-
+        <?php echo $__env->yieldContent('styles'); ?>
         <!-- Styles -->
         <?php echo \Livewire\Mechanisms\FrontendAssets\FrontendAssets::styles(); ?>
 
@@ -42,7 +42,7 @@ $__split = function ($name, $params = []) {
 };
 [$__name, $__params] = $__split('navigation-menu');
 
-$__html = app('livewire')->mount($__name, $__params, 'vrQnTv6', $__slots ?? [], get_defined_vars());
+$__html = app('livewire')->mount($__name, $__params, 'vXUmPLp', $__slots ?? [], get_defined_vars());
 
 echo $__html;
 
@@ -64,13 +64,16 @@ if (isset($__slots)) unset($__slots);
             <?php endif; ?>
 
             <!-- Page Content -->
-            <main>
-            <?php echo $__env->yieldContent('content'); ?>
-            </main>
+            <div class="container">
+                <div class="row">
+                    <main>
+                        <?php echo $__env->yieldContent('content'); ?>
+                    </main>
+                </div>
+            </div>
         </div>
 
         <?php echo $__env->yieldContent('scripts'); ?>
-        
         <?php echo \Livewire\Mechanisms\FrontendAssets\FrontendAssets::scripts(); ?> 
     </body>
 </html>

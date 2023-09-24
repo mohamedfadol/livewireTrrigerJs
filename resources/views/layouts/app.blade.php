@@ -13,7 +13,7 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-
+        @yield('styles')
         <!-- Styles -->
         @livewireStyles
     </head>
@@ -33,13 +33,16 @@
             @endif
 
             <!-- Page Content -->
-            <main>
-            @yield('content')
-            </main>
+            <div class="container">
+                <div class="row">
+                    <main>
+                        @yield('content')
+                    </main>
+                </div>
+            </div>
         </div>
 
         @yield('scripts')
-        
         @livewireScripts 
     </body>
 </html>
